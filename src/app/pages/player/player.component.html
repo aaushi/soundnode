@@ -1,0 +1,68 @@
+<div class="container">
+    <mat-toolbar class="primary">
+        <span> Audio Player</span>
+    </mat-toolbar>
+    <div style="text-align: center; padding-right: 150px; padding-top:50px">
+        <mat-icon style="font-size: 200px;">
+            music_note
+        </mat-icon>
+
+    </div>
+    <div style="text-align: center;">
+        <span style="font-size: xx-large"> Audio Player</span>
+    </div>
+    <div class="container">
+        <mat-list>
+            <div mat-subheader>Songs</div>
+            <mat-list-item *ngFor="let song of files;let i=index" (click)="openFile(song.url,i)"
+                [ngClass]="{'highlightRow':activeSong===i && rowSelected}" class="range">
+                <mat-icon mat-list-icon>music_note</mat-icon>
+                <div mat-line>{{song.name}}</div>
+                <div mat-line> by {{song.artist}} </div>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+
+        </mat-list>
+    </div>
+    <div style="background-color:#b6f27e;">
+        <div class="row" style="display: flex;
+        align-items: center; justify-content: space-around">
+            <div>
+                <span>{{currentTime}}</span>
+            </div>
+            <div style="width: 60%;">
+                <mat-slider min="0" max="{{duration}}" step="0.1" [value]="seek" (input)="seekTo($event)"
+                    aria-label="unit(s)">
+                </mat-slider>
+
+            </div>
+            <div>
+                <span>{{duration}}</span>
+            </div>
+        </div>
+
+        <div style="display: flex;
+        justify-content: space-evenly;
+        height: 80px; align-items: flex-start;">
+            <button mat-button>
+                <mat-icon style="font-size: 50px;
+           " (click)="playPrevious()">skip_previous</mat-icon>
+            </button>
+            <button mat-button >
+                <span class="material-icons" *ngIf="isPlaying" (click)="pause()">
+                    pause_circle_outline
+                </span>
+                <span class="material-icons" *ngIf="!isPlaying" (click)="play()">
+                    play_circle_filled
+                </span>
+            </button>
+            <!-- <mat-icon style="font-size: 50px;
+           " (>{{icon}}</mat-icon></button> -->
+            <button mat-button>
+                <mat-icon style="font-size: 50px;
+            " (click)="playNext()">skip_next</mat-icon>
+            </button>
+        </div>
+    </div>
+
+</div>

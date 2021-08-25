@@ -1,4 +1,9 @@
 # Soundnode
+An Angular app with audio playback features
+
+### App Screenshot 
+
+![screenshot](src/assets/audioplayer.PNG)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
 

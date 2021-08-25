@@ -1,0 +1,25 @@
+
+.mat-list-icon {
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  mat-slider {
+    width: 100%;
+  }
+
+  .highlightRow {
+    background-color: #f3ffe8;
+  }
+
+  .range{
+    height: 42px;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 46px;
+    padding: 15px 20px;
+    cursor: pointer;
+  }
+
+  .primary{
+    background-color: #b6f27e;
+  }
